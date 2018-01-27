@@ -755,12 +755,13 @@ MonoBehaviour:
     maintence: 10000
     energyType: 4
     hexRequirement: {fileID: 0}
-  coins: 0
-  power: 0
-  happiness: 0
-  time: 0
-  powerProgress: 0
-  cityNeedBar: 0
+  coins: 100
+  power: 100
+  happiness: 100
+  time: 100
+  timeLabel: 3 AM
+  powerProgress: 100
+  cityNeeds: 50
 --- !u!4 &1145168180
 Transform:
   m_ObjectHideFlags: 0
@@ -785,10 +786,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c156779e777bd7546ae3ea5a3d25c46b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinsText: {fileID: 0}
-  powerText: {fileID: 0}
-  happinessText: {fileID: 0}
-  timeText: {fileID: 0}
+  coinsText: {fileID: 1460417078}
+  powerText: {fileID: 1556583288}
+  happinessText: {fileID: 1911073157}
+  timeText: {fileID: 1865362516}
   powerProgress: {fileID: 768630692}
   powerProgressMax: {fileID: 1453660281}
   cityNeedBar: {fileID: 640846170}
@@ -1762,7 +1763,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 12:35
+  m_Text: 12 AM
 --- !u!222 &1865362517
 CanvasRenderer:
   m_ObjectHideFlags: 0

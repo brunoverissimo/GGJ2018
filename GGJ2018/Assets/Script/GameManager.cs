@@ -12,9 +12,10 @@ public class GameManager : MonoBehaviour {
     public int power;
     public int happiness;
     public int time;
+    public string timeLabel;
 
     public float powerProgress;
-    public float cityNeedBar;
+    public float cityNeeds;
 
     //Awake is always called before any Start functions
     void Awake()
