@@ -17,8 +17,8 @@ public class MapGenerator : Editor {
         // base.OnInspectorGUI();
 
         GUILayout.BeginHorizontal();
-        GUILayout.Label(" Sprite ");
-        map.spr = (Sprite)EditorGUILayout.ObjectField(map.spr, typeof(Sprite), allowSceneObjects: true);
+        GUILayout.Label(" Prefab ");
+        map.hexPreFab = (GameObject)EditorGUILayout.ObjectField(map.hexPreFab, typeof(GameObject), allowSceneObjects: true);
         GUILayout.EndHorizontal();
 
         GUILayout.BeginHorizontal();
