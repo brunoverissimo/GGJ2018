@@ -60,9 +60,12 @@ public class Map : MonoBehaviour {
                 hex_go.transform.SetParent(this.transform);
                 hex_go.transform.position = new Vector3(xPos, y * zOffset, 1f);
                 //hex_go.AddComponent<SpriteRenderer>();
-                hex_go.GetComponent<SpriteRenderer>().sprite = spr;
+                //hex_go.GetComponent<SpriteRenderer>().sprite = spr;
 
-                grid[x, y] = hex_go;
+
+                if (grid != null) {
+                    grid[x, y] = hex_go;
+                }
 
                 hex_go.GetComponent<Hex>().x = x;
                 hex_go.GetComponent<Hex>().y = y;
