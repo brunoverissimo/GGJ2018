@@ -28,10 +28,9 @@ public class UIManager : MonoBehaviour {
 	void Start () {
         foreach ( EnergyProvider provider in GameManager.instance.energyProviders)
         {
-            Debug.Log(provider.title);
             GameObject button = Instantiate(ButtonPrefab,ButtonGrid.transform);
             button.name = provider.title;
-            ButtonPrefab.GetComponent<AddEnergyButton>().Setup(provider);
+            button.GetComponent<AddEnergyButton>().Setup(provider);
         }
     }
 
