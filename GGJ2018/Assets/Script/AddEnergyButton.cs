@@ -14,17 +14,18 @@ public class AddEnergyButton : MonoBehaviour {
     {
         icon.sprite = energyProvider.iconSprite;
         title.text = energyProvider.title;
-        cost.text = energyProvider.cost.ToString();
-        power.text = energyProvider.power.ToString();
+        SetCost(energyProvider.cost);
+        SetPower(energyProvider.power);
     }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private void SetCost(int costPrice)
+    {
+        cost.text = "$ " + costPrice;
+    }
+
+    private void SetPower(int energyPower)
+    {
+        power.text = energyPower + " MWZ";
+    }
+
 }

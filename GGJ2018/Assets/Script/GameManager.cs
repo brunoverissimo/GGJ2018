@@ -8,6 +8,14 @@ public class GameManager : MonoBehaviour {
 
     public List<EnergyProvider> energyProviders;
 
+    public int coins;
+    public int power;
+    public int happiness;
+    public int time;
+
+    public float powerProgress;
+    public float cityNeedBar;
+
     //Awake is always called before any Start functions
     void Awake()
     {
@@ -20,7 +28,7 @@ public class GameManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        energyProviders = new List<EnergyProvider>();
+      
 	}
 	
 	// Update is called once per frame
