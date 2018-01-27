@@ -39,8 +39,27 @@ public class UIManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-
         UpdateHeaderValues();
+    }
+
+    string HourToClockHour(int hour)
+    {
+        string result = "";
+        if(hour < 12)
+        {
+            result = hour  + " AM";
+
+        }
+        else if (hour == 12)
+        {
+            result = hour + " PM";
+        }
+        else
+        {
+            result = (hour - 12) + " PM";
+        }
+
+        return result;
     }
 
     void UpdateHeaderValues()
@@ -49,7 +68,7 @@ public class UIManager : MonoBehaviour {
         SetCoins(GameManager.instance.coins);
         SetPower(GameManager.instance.power);
         SetHappiness(GameManager.instance.happiness);
-        SetTime(GameManager.instance.timeLabel);
+        SetTime(HourToClockHour(GameManager.instance.time));
     }
 
 
@@ -68,12 +87,6 @@ public class UIManager : MonoBehaviour {
 
         float needsPosition = (needs / totalNeed) * powerProgressMax.rectTransform.rect.width;
         float powerWidth = (power / totalNeed) * powerProgressMax.rectTransform.rect.width;
-
-        Debug.Log("needsPosition: " + needsPosition);
-        Debug.Log("powerWidth: " + powerWidth);
-        Debug.Log("totalNeed: " + totalNeed);
-
-        //cityNeedBar. = needsPosition;
 
         cityNeedBar.GetComponent<RectTransform>().localPosition = new Vector3(needsPosition, 0);
         powerProgress.GetComponent<RectTransform>().sizeDelta = new Vector2(powerWidth, powerProgress.rectTransform.rect.height);

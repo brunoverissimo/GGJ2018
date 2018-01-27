@@ -11,12 +11,14 @@ public class GameManager : MonoBehaviour {
     public int coins;
     public int power;
     public int happiness;
-    public int time;
-    public string timeLabel;
+   
 
     public float powerProgress;
     public float cityNeeds;
 
+    float currentTime;
+    public int secsToHour;
+    public int time;
     //Awake is always called before any Start functions
     void Awake()
     {
@@ -29,11 +31,28 @@ public class GameManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-      
-	}
+        secsToHour++;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        TimeCounter();
+    }
+
+    void TimeCounter()
+    {
+        currentTime += Time.deltaTime;
+
+        if (Mathf.RoundToInt(currentTime) % secsToHour == 0)
+        {
+            currentTime++;
+            time++;
+        }
+
+        if(time >= 24)
+        {
+            time = 0;
+        }
+    }
 }
